@@ -1,0 +1,122 @@
+.hystmodal__opened,
+.hystmodal__shadow {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.hystmodal__shadow {
+    border: none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 98;
+    opacity: 0;
+    transition: opacity .15s ease;
+    background-color: #000
+}
+
+.hystmodal__shadow--show {
+    pointer-events: auto;
+    opacity: .5;
+}
+
+.hystmodal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 1;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    z-index: 99;
+    visibility: hidden;
+}
+
+.hystmodal--active {
+    opacity: 1
+}
+
+.hystmodal--active,
+.hystmodal--moved {
+    pointer-events: auto;
+    visibility: visible
+}
+
+.hystmodal__wrap {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.hystmodal__window {
+    margin: 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #000;
+    width: 86vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow: visible;
+    transition: all .2s ease-in-out;
+    transform: translateX(-100vw);
+    opacity: 0
+}
+
+.hystmodal--active .hystmodal__window {
+    transform: translateX(0);
+    background-color: #000;
+    opacity: 1
+}
+
+.hystmodal__close {
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: -50px;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 1em;
+}
+
+.hystmodal__close::after {
+    content: "\002B";
+    color: #fff;
+    display: block;
+    transform: rotate(45deg);
+}
+
+.button__hyst__open {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1em;
+    padding: 6px 20px;
+    font-weight: 300;
+    margin-right: 20px;
+}

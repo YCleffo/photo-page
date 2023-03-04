@@ -1,0 +1,36 @@
+.help {
+    height: 414px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hepl__title {
+    text-align: center;
+}
+
+.hepl__title h2 {
+    font-size: 2.500em;
+    font-weight: 200;
+    line-height: 50px;
+}
+
+.hepl__title h4 {
+    font-size: 1.500em;
+    font-weight: 200;
+    line-height: 50px;
+    color: #c0c0c0;
+    margin-bottom: 10px;
+}
+
+@media all and (max-width:724px) {
+    .hepl__title h2 {
+        font-size: 1.500em;
+        font-weight: 200;
+        line-height: 30px;
+    }
+    .help {
+        height: 200px;
+    }
+}

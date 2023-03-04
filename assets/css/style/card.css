@@ -1,0 +1,190 @@
+.cam {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.card__btn:hover .cam-5 {
+    transform: translate(0);
+    transition: all .4s ease-in-out;
+}
+
+.card__btn:hover .cam-6 {
+    opacity: 0;
+    animation: btn__card__circle 1s infinite ease-in-out;
+}
+
+.cam-5 {
+    transition: all .6s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cam-6 {
+    transition: all .2s ease-in-out;
+    transform: scale(0);
+    position: absolute;
+    top: 4px;
+    left: 10px;
+}
+
+@keyframes btn__card__circle {
+    0% {
+        transform: scale(.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.8);
+        opacity: 0;
+    }
+}
+
+.flex__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info__card {
+    margin-top: 160px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 600px 600px;
+    gap: 16px 16px;
+    grid-template-areas: "title title" "card_1 card_2" "card_3 card_4";
+    max-width: 1168px;
+}
+
+@media all and (max-width:1500px) {
+    .info__card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 540px 540px;
+    }
+}
+
+@media all and (max-width:1250px) {
+    .info__card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 470px 470px;
+    }
+}
+
+@media all and (max-width:1000px) {
+    .info__card {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 380px 380px;
+    }
+}
+
+.grid__span {
+    grid-area: title;
+}
+
+.card__1 {
+    background-image: url(../../img/mac.jpg);
+    background-size: 100%;
+}
+
+.card__2 {
+    background-image: url(../../img/treugol.jpg);
+    background-size: 100%;
+}
+
+.card__3 {
+    background-image: url(../../img/les.jpg);
+    background-size: 100%;
+}
+
+.card__4 {
+    background-image: url(../../img/los.jpg);
+    background-size: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 30px;
+    transition: all .4s;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card__btn {
+    color: #000;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    white-space: nowrap;
+    border-radius: 1em;
+    transition: all .3s;
+}
+
+.card:hover {
+    background-size: 103%;
+    background-position: right bottom;
+}
+
+.slider {
+    display: none;
+}
+
+@media all and (max-width:800px) {
+    .info__card {
+        margin-top: 160px;
+        margin-bottom: 100px;
+        grid-auto-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 280px 280px 280px 280px;
+        gap: 0;
+    }
+    .card {
+        background-position: center;
+        margin: 5px 0 5px 0;
+    }
+    .card:hover {
+        background-size: 100%;
+        background-position: center;
+    }
+}
+
+@media all and (max-width: 724px) {
+    .card p {
+        display: none;
+    }
+    .card h3 {
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .card {
+        padding: 10px;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
